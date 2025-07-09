@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  django:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/code
+
+  express:
+    build:
+      context: ./server
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./server:/app
